@@ -2,8 +2,8 @@
 
 # FTP
 FTP_SERVER=flexdigit.cwsurf.de
-FTP_USER=usr_ftp_216891
-FTP_PW=gebuit00_Zaka2
+FTP_USER=USER
+FTP_PW=PW
 
 #cd .
 
