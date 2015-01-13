@@ -131,9 +131,9 @@ echo "</html>"                          >> $HTMLPAGE
 ##########################################
 # Kopiere die Skripte für den commit
 ##########################################
-cp /home/pi/temperature/gettemp.sh           /home/pi/temperature/flexdigit.github.com
-cp /home/pi/temperature/generiere_Grafik.sh  /home/pi/temperature/flexdigit.github.com
-cp /home/pi/temperature/index.htm            /home/pi/temperature/flexdigit.github.com
+#cp /home/pi/temperature/gettemp.sh           /home/pi/temperature/flexdigit.github.com
+#cp /home/pi/temperature/generiere_Grafik.sh  /home/pi/temperature/flexdigit.github.com
+#cp /home/pi/temperature/index.htm            /home/pi/temperature/flexdigit.github.com
 
 #########################
 # commite sie auf github
