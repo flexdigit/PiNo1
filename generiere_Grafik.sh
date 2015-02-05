@@ -5,9 +5,6 @@
 # Grafik solarday.png:	Temperaturen Vor- und Rücklauf der Solaranlage
 # Grafik solarweek.png:	Temperaturen Vor- und Rücklauf der Solaranlage
 
-# Wechsle ins Verzeichnis mit Datenbank und .digitemprc
-#cd /home/pi/temperature
-
 RRDPATH="/home/pi/temperature"
 
 #################
@@ -94,57 +91,9 @@ rrdtool graph $RRDPATH/solarweek.png --start -1w	\
   GPRINT:temp1:MAX:"Max.\: %4.1lf %s\n"             \
   COMMENT:"Generated $(/bin/date "+%a %d.%m.%Y | %H\:%M\:%S")\c"
 
-######################
-# Generiere index.htm
-######################
-HTMLPAGE="/home/pi/temperature/index.htm"
-
-echo "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">" > $HTMLPAGE
-echo "<html>"                           >> $HTMLPAGE
-echo "<head>"                           >> $HTMLPAGE
-echo "    <title>No. 1 | flexdigit</title>"			>> $HTMLPAGE
-echo "</head>"                          >> $HTMLPAGE
-echo "No. 1 | "                         >> $HTMLPAGE
-#echo "<br>"                             >> $HTMLPAGE
-date '+%a %Y-%m-%d %H:%M'               >> $HTMLPAGE
-echo "    <p></p>"                      >> $HTMLPAGE
-echo ""                                 >> $HTMLPAGE
-echo "    <img src="http://flexdigit.cwsurf.de/tempday.png">"		>> $HTMLPAGE
-echo "    <img src="http://flexdigit.cwsurf.de/tempweek.png">"		>> $HTMLPAGE
-echo "    <img src="http://flexdigit.cwsurf.de/solarday.png">"		>> $HTMLPAGE
-echo "    <img src="http://flexdigit.cwsurf.de/solarweek.png">"	    >> $HTMLPAGE
-echo ""                                 >> $HTMLPAGE
-echo "    <img src="http://flexdigit.cwsurf.de/image.jpg">"         >> $HTMLPAGE
-echo "	  <p></p>"                      >> $HTMLPAGE
-uptime                                  >> $HTMLPAGE
-echo "	  <p></p>"                      >> $HTMLPAGE
-echo "<font size="4" face="Courier"><pre>" >> $HTMLPAGE
-df -h |  tr '\n' '#' | sed 's/#/<br>/g' >> $HTMLPAGE
-echo "	  <p></p>"                      >> $HTMLPAGE
-#du -sh /home/pi/temperature/flexdigit.github.com/.git/ >> $HTMLPAGE
-vcgencmd measure_temp					>> $HTMLPAGE
-vcgencmd measure_volts					>> $HTMLPAGE
-vcgencmd measure_clock arm				>> $HTMLPAGE
-echo "</pre></font>"                    >> $HTMLPAGE
-echo "</html>"                          >> $HTMLPAGE
-
-##########################################
-# Kopiere die Skripte für den commit
-##########################################
-#cp /home/pi/temperature/gettemp.sh           /home/pi/temperature/flexdigit.github.com
-#cp /home/pi/temperature/generiere_Grafik.sh  /home/pi/temperature/flexdigit.github.com
-#cp /home/pi/temperature/index.htm            /home/pi/temperature/flexdigit.github.com
-
-#########################
-# commite sie auf github
-#########################
-#cd /home/pi/temperature/flexdigit.github.com
-#git add .
-#git commit -a -m `date +%s`
-#git push origin
 
 #############################################################
-# FTP-Skripte ausführen um Bilder auf www.cwcity.de zu laden
+# FTP-Skripte ausführen um Grafiken auf www.cwcity.de zu laden
 #############################################################
 cd /home/pi/temperature/
 ./cwcity_FTP.sh
