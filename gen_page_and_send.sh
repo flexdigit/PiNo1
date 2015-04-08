@@ -107,10 +107,10 @@ cd /home/pi/Perlen
 
 ######################################
 #
-# call read_1day_gen_graph.pl to generate daily graph of gasconsumption
+# call gen_day_graph.pl to generate day_graph.png (daily graph of gasconsumption)
 #
 cd /home/pi/Perlen
-./read_1day_gen_graph.pl
+./gen_day_graph.pl
 
 ######################################
 #
