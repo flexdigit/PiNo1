@@ -111,6 +111,8 @@ cd /home/pi/Perlen
 #
 cd /home/pi/Perlen
 ./gen_day_graph.pl
+./gen_week_graph.pl
+./gen_year_graph.pl
 
 ######################################
 #
