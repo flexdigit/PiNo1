@@ -19,6 +19,11 @@ mput tempday.png
 mput solarday.png
 mput tempweek.png
 mput solarweek.png
+mput day_graph.png
+mput week_bars.png
+mput year_bars.png
+
+mput index.htm
 
 by
 EOT
