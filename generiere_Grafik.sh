@@ -1,5 +1,5 @@
 #!/bin/bash
-# Generiert 4 Grafik für 4 Temperatursensoren (Sensor 1, 2, 3, 4)
+# Generiert 4 Grafiken für 4 Temperatursensoren (Sensor 1, 2, 3, 4)
 # Grafik tempday.png:	Temperaturen inne und außen
 # Grafik tempweek.png:	Temperaturen inne und außen
 # Grafik solarday.png:	Temperaturen Vor- und Rücklauf der Solaranlage
